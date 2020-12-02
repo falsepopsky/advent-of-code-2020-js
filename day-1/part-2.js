@@ -10,9 +10,9 @@ async function sortArray(arrayInputNotSorted) {
 }
 
 async function threeEntriesThatSum2020(inputSorted) {
-  for (let i = 0; i < inputLenght; i++) {
-    for (let j = 0; j < inputLenght; j++) {
-      for (let k = 0; k < inputLenght; k++) {
+  for (let i = 0; i < inputLenght - 1; i++) {
+    for (let j = 1; j < inputLenght - 2; j++) {
+      for (let k = 2; k < inputLenght; k++) {
         if (inputSorted[j] + inputSorted[i] + inputSorted[k] == 2020) {
           let result = [inputSorted[j], inputSorted[i], inputSorted[k]];
           return result;

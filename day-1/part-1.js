@@ -11,7 +11,7 @@ async function sortArray(arrayInputNotSorted) {
 
 async function twoEntriesThatSum2020(inputSorted) {
   for (let i = 0; i < inputLenght; i++) {
-    for (let j = 0; j < inputLenght; j++) {
+    for (let j = 1; j < inputLenght; j++) {
       if (inputSorted[j] + inputSorted[i] == 2020) {
         let result = [inputSorted[j], inputSorted[i]];
         return result;
