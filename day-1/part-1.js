@@ -1,6 +1,4 @@
-let { inputList } = require('./inputList');
-
-const inputLenght = inputList.length;
+let { inputList, inputLenght, total } = require('./inputList');
 
 async function sortArray(arrayInputNotSorted) {
   const sortedInput = await arrayInputNotSorted.sort(function (a, b) {
@@ -10,9 +8,9 @@ async function sortArray(arrayInputNotSorted) {
 }
 
 async function twoEntriesThatSum2020(inputSorted) {
-  for (let i = 0; i < inputLenght; i++) {
+  for (let i = 0; i < inputLenght - 1; i++) {
     for (let j = 1; j < inputLenght; j++) {
-      if (inputSorted[j] + inputSorted[i] == 2020) {
+      if (inputSorted[j] + inputSorted[i] == total) {
         let result = [inputSorted[j], inputSorted[i]];
         return result;
       }

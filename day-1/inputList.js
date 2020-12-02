@@ -201,4 +201,8 @@ const inputList = [
   1970,
 ];
 
-module.exports = { inputList };
+const total = 2020;
+
+const inputLenght = inputList.length;
+
+module.exports = { inputList, inputLenght, total };
