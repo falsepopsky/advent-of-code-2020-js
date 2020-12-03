@@ -6,18 +6,21 @@ async function getValidPasswords(data) {
   let validPasswords = 0;
 
   for (let i = 0; i < lengthOfArray; i++) {
-    let countLetters = 0;
+    let start = data[i].start - 1;
+    let end = data[i].end - 1;
+    let password = data[i].password;
 
-    for (let j = 0; j < data[i].password.length; j++) {
-      if (data[i].letter == data[i].password[j]) {
-        countLetters++;
-      }
-    }
-
-    if (countLetters >= data[i].start && countLetters <= data[i].end) {
+    if (data[i].letter == password[start] && data[i].letter !== password[end]) {
       validPasswords++;
+    } else if (
+      data[i].letter !== password[start] &&
+      data[i].letter == password[end]
+    ) {
+      validPasswords++;
+    } else {
     }
   }
+
   return validPasswords;
 }
 
